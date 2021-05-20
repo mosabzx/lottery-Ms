@@ -1,0 +1,177 @@
+﻿
+To get a printed all elements array in Vertical or column.
+int[] array = { 1, 2, 3, 4, 5 };
+
+Array.ForEach(array, Console.WriteLine);
+
+Output:
+ 
+1
+2
+3
+4
+5
+
+------------------------------------------
+
+To get a printed out all elements array in horizontal or row.
+
+int[] array = { 1, 2, 3, 4, 5 };
+
+Console.WriteLine(String.Join(",", array));
+
+
+Output: 1,2,3,4,5
+
+--------------------------------------------
+
+int[] array1 = { 1, 2, 3, 4, 5 };
+
+            foreach (var item in array1)
+            {
+                Console.WriteLine(item);
+            }
+
+Output:
+ 
+1
+2
+3
+4
+5
+
+And If I used Console.Write(item); I will get the out put in the same line or Row.
+
+int[] array1 = { 1, 2, 3, 4, 5 };
+
+            foreach (var item in array1)
+            {
+                Console.Write(item);
+            }
+
+Output:  Output: 12345
+
+------------------------------------------------
+
+
+To print the elements with a spacess between them In Row or Line:
+
+int[] array2 = { 1, 2, 3, 4, 5 };
+
+        foreach (int i in array2)
+        {
+            Console.Write("{0} ", i); / "{0} " Refer to elements in the array and treated as string.
+        }
+
+ Output: 1 2 3 4 5
+
+
+---------------------------------------------
+
+To print out an array elements with specific separator by using Method String.Join :
+
+ int[] array3 = { 1, 2, 3, 4, 5 };
+
+ Console.WriteLine(String.Join(",", array3));
+    
+
+Output: Output: 1,2,3,4,5
+
+
+
+--------------------------------------------------------
+
+
+
+Using this code In Function with modifying the Output with string:
+
+ static void mylist()
+        {
+            int[] array3 = { 1, 2, 3, 4, 5 };
+
+            Console.WriteLine("[" + String.Join(", ", array3)+ "]");
+        }
+
+Output:
+[1, 2, 3, 4, 5]
+
+Or:
+
+ Console.WriteLine("[{0}]", string.Join(", ", array3));
+ //output style: [1, 2, 3, 4, 5]
+
+--------------------------------------------
+
+Using Random Generator:
+
+Random rnd = new Random();
+int month  = rnd.Next(1, 13);  // creates a number between 1 and 12
+int dice   = rnd.Next(1, 7);   // creates a number between 1 and 6
+int card   = rnd.Next(52);     // creates a number between 0 and 51
+
+
+
+---------------------------------------------------
+
+Converting string to integer:
+
+int.Parse("30,000", NumberStyles.AllowThousands, new CultureInfo("en-au"));// returns 30000
+int.Parse("$ 10000", NumberStyles.AllowCurrencySymbol); //returns 10000
+int.Parse("-100", NumberStyles.AllowLeadingSign); // returns -100
+
+------------------------------------------------------------------
+
+Example: Convert string to int using Convert class
+Convert.ToInt16("100"); // returns short
+Convert.ToInt16(null);//returns 0
+
+Convert.ToInt32("233300");// returns int
+Convert.ToInt32("1234",16); // returns 4660 - Hexadecimal of 1234
+
+Convert.ToInt64("1003232131321321");//returns long
+
+// the following throw exceptions
+Convert.ToInt16("");//throws FormatException
+Convert.ToInt32("30,000"); //throws FormatException
+Convert.ToInt16("(100)");//throws FormatException
+Convert.ToInt16("100a"); //throws FormatException
+Convert.ToInt16(2147483649);//throws OverflowException
+
+----------------------------------------------------------------------
+                =====File Manageing========
+***To Get a file location automaticlly from hardisk:
+
+string path = Path. GetFullPath(FileName); //it will return the Full path of that mentioned file.
+Console.WriteLine(path); // it will print path loction for spicific file.
+
+string FileName = "LottoResult.txt"; //creating Variable and add a filename in it.
+
+string path = @"c:\temp\LottoResult.txt"; // This variable will define the file path.
+
+
+Example:
+
+*** To create a path for file and check if not exist create it and write inside it:
+
+
+ string path = @"C:\lotto\LottoResult.txt"; // Lotto Folder must be created before runing the code.
+
+            if (!File.Exists(path))
+            {
+                using (StreamWriter addTofile = File.CreateText(path))
+                {
+                    addTofile.WriteLine(Result); // a variable result is result from lotto code.
+                }
+                
+            }
+
+X#Result: The Text saved in the file but if run the code again nothing will be written in the file.
+
+    
+
+
+
+
+
+----------------------------------------------------------------------
+

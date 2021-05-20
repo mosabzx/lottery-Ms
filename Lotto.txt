@@ -1,0 +1,1153 @@
+﻿(Creating a Random Generator:)
+
+**Random rand = new Random();
+            int lotto = rand.Next(101);
+            int lotto1 = rand.Next(101);
+
+            Console.WriteLine(lotto);
+            Console.WriteLine(lotto1);
+
+
+
+*Trying to make this code generate many numbers by itrate it in While Loop:
+
+ Random rand = new Random();
+            int lotto = rand.Next(1,101);
+
+            int i = 1;
+            while (i <= 11)
+            {
+                Console.WriteLine(lotto);
+                i++;
+            }
+
+#XResult: This code made th While loop itrate the same number that has been generated from Random generator.
+
+
+
+
+
+
+
+
+*
+Random lotto = new Random();
+
+            Console.WriteLine("Generating 10 random numbers:");
+
+            for (int i = 1; i <= 10; i++)
+                Console.WriteLine($"{lotto.Next(1,101)}");
+
+
+
+## Result: This Code generate 10 different numbers from random by using for loop.
+
+
+
+Alternative way for this code the same # Result:
+
+ Random lotto = new Random();
+
+ Console.WriteLine("Generating 10 random numbers:");
+
+  for (int i = 1; i <= 11; i++) 
+   {
+                
+        Console.WriteLine(lotto.Next(1, 101));     
+       
+    }          
+
+## Result: This Code generate 10 different numbers from random by using for loop. but in Variable obeject.
+
+
+
+
+
+
+            
+=======================================
+
+(Creating an integer Empty List With name lottolist:)
+
+
+var lottolist = new List<int>();
+
+
+* Adding the generated numbers from random to list [lottolist]:
+
+
+ Random lotto = new Random();
+
+            
+
+            var lottolist = new List<int>();
+
+            for (int i = 1; i <= 11; i++) 
+            {
+                
+                
+              int lottonums = lotto.Next(1, 101);
+
+                lottolist.Add(lottonums);
+
+            }
+
+
+            Console.WriteLine(lottolist.Count);
+
+
+## The Result : Done I have 11 elmetns in the lottolist by using .count method.
+
+
+* Now To print Out the Elements by using the String Interpolation "{0}" and String.Join method.
+
+
+Console.WriteLine("[{0}]", String.Join(", ",lottolist));
+
+## The Result Output: [24, 49, 68, 10, 13, 65, 64, 91, 28, 79, 96].
+
+
+============================================================
+
+Recent Code Stages:
+
+*Using Random Class to create random numbers. with name (lotto).
+*Create and empty list integer type with name (lottolist).
+*Using for loop to let the generater generate 11 numbers /for (int i = 1; i <= 11; i++)/.
+*In for loop create an integer variable (lottonums) and assign the generator /lotto.next(1,101)/ to it.
+*Adding the generated numbers to the (lottolist) / lottolist.Add(lottonums) /.
+* Sorting The (lottolist) / lottolist.Sort();
+*Printing Out the (lottolist) to check the generated numbers / Console.WriteLine("[{0}]", String.Join(", ",lottolist)) /.
+
+ static void Main(string[] args)
+        {
+            Random lotto = new Random();
+
+            var lottolist = new List<int>();
+
+
+
+            for (int i = 1; i <= 11; i++) 
+            {
+                
+                
+              int lottonums = lotto.Next(1, 101);
+
+                lottolist.Add(lottonums);
+
+                
+            }
+            lottolist.Sort();
+            Console.WriteLine("[{0}]", String.Join(", ",lottolist));
+
+           
+            
+
+
+            Console.ReadLine();
+
+
+=======================================================
+
+***Create a Method for Generated Lotto Numbers:
+
+
+static void LottoNums()
+        {
+            Random lotto = new Random();
+
+            var lottolist = new List<int>();
+
+
+
+            for (int i = 1; i <= 11; i++)
+            {
+
+
+                int lottonums = lotto.Next(1, 101);
+
+                lottolist.Add(lottonums);
+
+
+            }
+            lottolist.Sort();
+            Console.WriteLine("[{0}]", String.Join(", ", lottolist));
+
+
+
+        }
+
+### Result : Upon Task request ###
+
+==================================================================
+
+Creating Method for Users info:
+
+
+ static void Usernames()
+        {
+            Console.Write("Please Enter your name: ");
+            string username = Console.ReadLine();
+            Console.Write("Enter 7 numbers sperataed with comma: ");
+            int usernums = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Please Enter your name: ");
+            string username1 = Console.ReadLine();
+            Console.Write("Enter 7 numbers sperataed with comma: ");
+            int usernums1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Your lottary entery: " + username + " " + usernums);
+            Console.WriteLine("Your lottary entery: " + username1 + " " + usernums1);
+
+        }
+X# Result : Erorr Can't combine string with integer in the input.
+
+===============================================================
+
+** Adding the Numbers from user input into list:
+
+
+  Console.WriteLine("Please Enter your name: ");
+  string username = Console.ReadLine();
+
+
+  Console.WriteLine("Please Enter 7 numbers with 1 or 2 digits : ");
+
+
+
+  var usernum = new List<string>();
+
+  usernum.Add(Console.ReadLine());
+
+  foreach(var item in usernum)
+            {
+                Console.WriteLine(Convert.ToInt32(usernum));
+            }
+           
+X# Result : Only one value in the list. Erorr Code.
+
+=================================================================
+
+** Adding the Numbers from user input into array:
+
+            Console.WriteLine("Please Enter 7 numbers with 1 or 2 digits : ");
+
+            string input = Console.ReadLine();
+
+
+            //Creating an array and add the user input to it:
+
+            string[] numlist = input.Split(' ');
+
+            Console.WriteLine("{0}", String.Join(",",numlist));
+
+            
+            /*foreach(var num in numlist)
+            {
+                Console.WriteLine($",{num} ,");
+            }*/
+
+## Result: with foreach the output will be in Vertical way.
+Without foreach with method String.Join out put become in Horizontal way like : 1,3,4,5,6,7
+
+
+
+  ===================================================================
+
+  *** Print out The input name and numbers from usser in the same line or row:
+
+  
+            Console.WriteLine("Please Enter your name: ");
+            string username = Console.ReadLine();
+
+
+            Console.WriteLine("Please Enter 7 numbers with 1 or 2 digits : ");
+            string input = Console.ReadLine();
+
+
+            string[] numlist = input.Split(' ');
+            Array.Sort(numlist);
+            Console.WriteLine($"{username}" + ", " + $"{String.Join("," ,numlist)}");
+
+# Result : Print out Ok but sorting not good.
+
+===========================================================
+
+*** Adding The string from user input into List:
+
+ Console.WriteLine("Please Enter 7 numbers with 1 or 2 digits : ");
+            string input = Console.ReadLine();
+          
+
+            List<char> numlist = new List<char>();
+
+            foreach (char let in input)
+            {
+                numlist.Add(let);
+            }
+##Result: The string added into list .
+
+===============================================================
+
+** Taking numbers from user input 7 times:
+
+ Console.WriteLine("Chose 7 numbers each number from 1 or 2 digits in each row : ");
+            for (int i = 1; i< 7 ; ++i)
+            {
+               Console.Write("\nEnter number from 1 or 2 digits: ");
+              int usernum = Convert.ToInt32(Console.ReadLine());
+            }
+            
+## Resut: input itrate 7 times in row.
+
+
+
+
+****Completing The code with Adding the numbers form input user into list:
+
+            Console.WriteLine("Chose 7 numbers each number from 1 or 2 digits in each row : ");
+            
+            int input;
+            List<int> numlist = new List<int>();
+            for (int i = 1; i<= 7 ; ++i)
+            {
+               Console.Write("\nEnter number from 1 or 2 digits: ");
+               input = Convert.ToInt32(Console.ReadLine());
+                numlist.Add(input);
+            }
+            foreach(int n in numlist)
+            {
+                Console.WriteLine(n);
+            }
+            
+
+###Result: The numbers from input users added into list.
+
+
+*** The same code but with sorted list numbers when printed out:
+
+  Console.WriteLine("Chose 7 numbers each number from 1 or 2 digits in each row : ");
+            
+            int input;
+            List<int> numlist = new List<int>();
+            for (int i = 1; i<= 7 ; ++i)
+            {
+               Console.Write("\nEnter number from 1 or 2 digits: ");
+               input = Convert.ToInt32(Console.ReadLine());
+                numlist.Add(input);
+            }
+
+            numlist.Sort();
+            Console.WriteLine(String.Join(",", numlist));
+
+####Result: Collecting the numbers from user input and add it to sorted list.###
+
+==========================================================================
+
+***Code Stage : Getting the username and numbers from input and print them out with sorted numbers:
+Console.Write("Please Enter your name: ");
+            string username = Console.ReadLine();
+
+            Console.WriteLine("Chose 7 numbers each number from 1 or 2 digits in each row : ");
+            
+            int input;
+            List<int> numlist = new List<int>();
+            for (int i = 1; i<= 7 ; ++i)
+            {
+               Console.Write("\nEnter number from 1 or 2 digits: ");
+               input = Convert.ToInt32(Console.ReadLine());
+                numlist.Add(input);
+            }
+
+            numlist.Sort();
+            //Console.WriteLine(String.Join(",", numlist)); // this for printing out the numbers list.
+
+             
+             //This print out the the username and enterd numbers from user input.
+             Console.WriteLine($"{username}" + ", " + $"{String.Join("," ,numlist)}");
+             
+             The output: Name, nr1,nr2,nr3,n4,n5,nr6,nr7
+
+
+===============================================================
+
+****Final Recent stage for lotto Code:
+
+static void Main(string[] args)
+        {
+            Console.Write("Please Enter your name: ");
+            string username = Console.ReadLine();
+
+            Console.WriteLine("Chose 7 numbers each number from 1 or 2 digits in each row : ");
+            
+            int input;
+            List<int> numlist = new List<int>();
+            for (int i = 1; i<= 7 ; ++i)
+            {
+               Console.Write("\nEnter number from 1 or 2 digits: ");
+               input = Convert.ToInt32(Console.ReadLine());
+                numlist.Add(input);
+            }
+
+            numlist.Sort();
+
+            Console.WriteLine("Lotto Starts.....");
+
+            Random lotto = new Random();
+
+            var lottolist = new List<int>();
+
+
+
+            for (int i = 1; i <= 11; i++)
+            {
+
+
+                int lottonums = lotto.Next(1, 101);
+
+                lottolist.Add(lottonums);
+
+
+            }
+            lottolist.Sort();
+            //Console.WriteLine("Correct Row!: " + "{0}", String.Join(", ", lottolist));
+
+            List<int> lottomatch = new List<int>();
+            
+
+            foreach (int x in numlist)
+            foreach(int z in lottolist)
+           if( x == z)
+                    {
+                        lottomatch.Add(x);
+                    }
+
+            lottomatch.Sort();
+            //lottomatch.Count();
+            //Console.WriteLine("Right numbers: "+"{0}",String.Join(",",lottomatch));
+            
+            Console.WriteLine("Correct Row!: " + "{0}", String.Join(", ", lottolist));
+
+            Console.WriteLine($"{username}" + ", " + $"{String.Join("," ,numlist)}" + "\t" +$"{lottomatch.Count()}" +" Right");
+
+
+
+
+
+
+
+
+            Console.ReadLine();
+
+        }
+
+
+
+==================================================================
+
+
+***Assigning print out results lines  variables:
+
+Console.WriteLine("Correct Row!: " + "{0}", String.Join(", ", lottolist));
+
+Console.WriteLine($"{username}" + ", " + $"{String.Join("," ,numlist)}" + "\t" +$"{lottomatch.Count()}" +" Right");
+
+
+string lottorow = "Correct Row!: " + String.Join(",", lottolist);
+string usernamerow = username + ", ";
+string numlistrow = String.Join(",", numlist) + "\t";
+string lottomatchrow = Convert.ToString(lottomatch.Count() + " Right");
+
+=========================================================================
+
+$ The Final Recent Stage for Lotto Code:
+
+
+        static string path = @"c:\lotto\LottoResult.txt";
+
+        static void Main(string[] args)
+        {
+            Console.Write("Please Enter your name: ");
+            string username = Console.ReadLine();
+
+            Console.WriteLine("Chose 7 numbers each number from 1 or 2 digits in each row : ");
+
+            int input;
+            List<int> numlist = new List<int>();
+            for (int i = 1; i<= 7 ; ++i)
+            {
+               Console.Write("\nEnter number from 1 or 2 digits: ");
+               input = Convert.ToInt32(Console.ReadLine());
+                numlist.Add(input);
+            }
+
+            numlist.Sort();
+
+            Console.WriteLine("\nLotto Starts.............\n\nThe Result: ");
+
+            Random lotto = new Random();
+
+            var lottolist = new List<int>();
+
+
+
+            for (int i = 1; i <= 11; i++)
+            {
+
+
+                int lottonums = lotto.Next(1, 100);
+
+                lottolist.Add(lottonums);
+
+
+            }
+            lottolist.Sort();
+            //Console.WriteLine("Correct Row!: " + "{0}", String.Join(", ", lottolist));
+
+            List<int> lottomatch = new List<int>();
+            
+
+            foreach (int x in numlist)
+            foreach(int z in lottolist)
+           if( x == z)
+                    {
+                        lottomatch.Add(x);
+                    }
+
+            lottomatch.Sort();
+            //lottomatch.Count();
+            //Console.WriteLine("Right numbers: "+"{0}",String.Join(",",lottomatch));
+
+
+            //Console.WriteLine("Correct Row!: " + "{0}", string.Join(", ", lottolist));
+
+            string lottorow = "Correct Row!: " + String.Join(",", lottolist) + "\n";
+            string usernamerow = "\n" + username + ", ";
+            string numlistrow = String.Join(",", numlist) + "\t";
+            string lottomatchrow = Convert.ToString(lottomatch.Count() + " Right");
+            string Result = $"{lottorow} {usernamerow} {numlistrow} {lottomatchrow}";
+
+            //Console.WriteLine($"{username}" + ", " + $"{string.Join("," ,numlist)}" + "\t" +$"{lottomatch.Count()}" +" Right");
+            Console.WriteLine(Result);
+
+            Console.ReadLine();
+=======================================================================================
+
+** To Save the Result in  text File on hardisk:
+
+ string path = @"C:\lotto\LottoResult.txt"; // Lotto Folder must be created before runing the code.
+
+            if (!File.Exists(path))
+            {
+                using (StreamWriter addTofile = File.CreateText(path))
+                {
+                    addTofile.WriteLine(Result);
+                }
+                
+            }
+#XResult: The file saved only one reuslt . the code need fixing. because with command File.CreateText.
+
+
+
+========
+
+** Another way with to save the result on hardisk:
+
+string path = @"C:\lotto\LottoResult.txt"; // Lotto Folder and lottoResult File must be created before runing the code.
+
+            
+            
+                using (StreamWriter addTofile = new StreamWriter(path))
+                {
+                    addTofile.WriteLine(Result);
+                }
+                
+##Result: The result has been written on the file but for one time only.
+it need to be saved on each time the code run to save the data.
+
+
+
+
+
+
+**** final way with Good Code: *****
+string path = @"C:\lotto\LottoResult.txt"; // Lotto Folder and lottoResult File must be created before runing the code.
+
+            
+            
+                using (StreamWriter addTofile = new StreamWriter(path,true))
+                {
+                    addTofile.WriteLine("\n"+Result);
+                }
+                
+###Result: The data from lotto code saved in the File on each time the code run.####
+
+
+
+===============================================================================
+
+$$ The Recent stage for Lotto code:
+
+ static void Main(string[] args)
+        {
+            Console.Write("Please Enter your name: ");
+            string username = Console.ReadLine();
+
+            Console.WriteLine("Chose 7 numbers each number from 1 or 2 digits in each row : ");
+
+            int input;
+            List<int> numlist = new List<int>();
+            for (int i = 1; i<= 7 ; ++i)
+            {
+               Console.Write("\nEnter number from 1 or 2 digits: ");
+               input = Convert.ToInt32(Console.ReadLine());
+                numlist.Add(input);
+            }
+
+            numlist.Sort();
+
+            Console.WriteLine("\nLotto Starts.............\n\nThe Result: ");
+
+            Random lotto = new Random();
+
+            var lottolist = new List<int>();
+
+
+
+            for (int i = 1; i <= 11; i++)
+            {
+
+
+                int lottonums = lotto.Next(1, 100);
+
+                lottolist.Add(lottonums);
+
+
+            }
+            lottolist.Sort();
+            //Console.WriteLine("Correct Row!: " + "{0}", String.Join(", ", lottolist));
+
+            List<int> lottomatch = new List<int>();
+            
+
+            foreach (int x in numlist)
+            foreach(int z in lottolist)
+           if( x == z)
+                    {
+                        lottomatch.Add(x);
+                    }
+
+            lottomatch.Sort();
+            //lottomatch.Count();
+            //Console.WriteLine("Right numbers: "+"{0}",String.Join(",",lottomatch));
+
+
+            //Console.WriteLine("Correct Row!: " + "{0}", string.Join(", ", lottolist));
+
+            string lottorow = "Correct Row!: " + String.Join(",", lottolist) + "\n";
+            string usernamerow = "\n" + username + ", ";
+            string numlistrow = String.Join(",", numlist) + "\t";
+            string lottomatchrow = Convert.ToString(lottomatch.Count() + " Right");
+            string Result = $"{lottorow} {usernamerow} {numlistrow} {lottomatchrow}";
+
+            //Console.WriteLine($"{username}" + ", " + $"{string.Join("," ,numlist)}" + "\t" +$"{lottomatch.Count()}" +" Right");
+            Console.WriteLine(Result);
+
+
+
+
+
+
+
+            //string FileName = "LottoResult.txt";
+
+            //using (StreamWriter addTofile = File.CreateText(path))
+            //using (StreamWriter addTofile = new StreamWriter(path))
+
+            string path = @"C:\lotto\LottoResult.txt"; // Lotto Folder and lottoResult File must be created before runing the code.
+
+            
+            
+                using (StreamWriter addTofile = new StreamWriter(path,true))
+                {
+                    addTofile.WriteLine(Result+ "\n==================");
+                }
+                
+            
+               
+
+                
+            
+
+            
+            //path = Path.GetFullPath("LottoResult.txt");
+            //Console.WriteLine(path);
+
+
+
+
+            Console.ReadLine();
+
+        }
+
+
+#$ The Result: 
+1-Taking user name from input. 
+2-Taking 7 number from user from input. 
+3-Generating Lotto Numbers.
+4-Printing the result for Lotto numbers + Username + Usernumbers + Matching numbers.
+5- Saving the result in a text file on Hardisk.
+
+=========================================================
+
+*** Code Taking 7 number from user input and sorted in list code:
+
+  Console.Write("Chose 7 numbers Ex. 1,22,65,4 etc..: ");
+            List<int> input = new List<int>();
+            List<int> numlist = new List<int>();
+            input = Console.ReadLine().Split(',').Select(int.Parse).ToList();
+            
+            foreach (var item in input)
+            {
+                numlist.Add(item);
+            }
+
+            numlist.Sort();
+
+===========================================================
+
+Code For Taking many Usernames and gather them in a list:
+ List<string> username = new List<string>();
+            string nameinput;
+            bool name = true;
+            while (name)
+            {
+                Console.Write("Please Enter your name: ");
+                nameinput = Console.ReadLine();
+                username.Add(nameinput);
+                if (nameinput == "")
+                {
+                    name = false;
+                } 
+                
+            }
+            Console.WriteLine(String.Join(",", username));
+
+==================================================================
+
+Taking Numbers from user input and gather them in a list:
+
+Console.Write("Chose 7 numbers Ex. 1,22,65,4 etc..: ");
+            List<int> numlistinput = new List<int>();
+            List<int> numlist = new List<int>();
+            numlistinput = Console.ReadLine().Split(',').Select(int.Parse).ToList();
+            foreach (var item in numlistinput)
+            {
+                numlist.Add(item);
+            }
+            Console.WriteLine(String.Join(",",numlist));
+
+
+===================================================================
+
+Taking names and numbers from user input and gather them in lists:
+
+
+ public static void Lotto2()
+        {
+
+            List<string> username = new List<string>();
+            string nameinput;
+            List<int> numlistinput = new List<int>();
+            List<int> numlist = new List<int>();
+            bool name = true;
+            while (name)
+            {
+                Console.Write("Please Enter your name: ");
+                nameinput = Console.ReadLine();
+                username.Add(nameinput);
+                
+                const string v = "";
+                
+                if (nameinput == v)
+                {
+                    name = false;
+                    break;
+                }
+                
+                Console.Write("Chose 7 numbers Ex. 1,22,65,4 etc..: ");
+                numlistinput = Console.ReadLine().Split(',').Select(int.Parse).ToList();
+                foreach (var item in numlistinput)
+                {
+                    numlist.Add(item);
+                }
+
+
+                
+
+            }
+
+            Console.WriteLine(String.Join(",", username));
+            Console.WriteLine(String.Join(",", numlist));
+
+====================================================================================
+
+**New Solution For Lotto Method:
+
+
+
+
+
+
+
+
+=====================================================================
+
+
+                               ****** The Pre Final Code ******
+public static void Lotto3()
+        {
+            bool loop = true;
+            try
+            {
+                string username;
+                List<int> numlistinput = new List<int>();
+                List<int> numlist = new List<int>();
+                Random lotto = new Random();
+                var lottolist = new List<int>();
+                List<int> lottomatch = new List<int>();
+                const string v = "";
+                string usernamerow;
+                string lottorow;
+                string numlistrow;
+                string lottomatchrow;
+                string Result;
+                string path = @"C:\lotto\LottoResult.txt";
+
+                while (loop)
+                {
+                    numlist.Clear();
+                    Console.Write("Please Enter your name: ");
+                    username = Console.ReadLine();
+                    if (username == v)
+                    {
+                        
+                        break;
+                    }
+
+                    Console.Write("Chose 7 numbers Ex. 1,22,65,4 etc..: ");
+                    numlistinput = Console.ReadLine().Split(',').Select(int.Parse).ToList();
+
+                    foreach(var item in numlistinput)
+                    {
+
+                        numlist.Add(item);
+
+                    }
+                    numlist.Sort();
+                    
+                        
+
+
+                    
+                        for (int i = 1; i <= 11; i++)
+                        {
+                            int lottonums = lotto.Next(1, 100);
+
+                            lottolist.Add(lottonums);
+                        }
+                        lottolist.Sort();
+
+                        foreach (int x in numlist)
+                        foreach (int z in lottolist)
+                        if (x == z)
+                        {
+                             lottomatch.Add(x);
+                        }
+                    
+                    
+
+                    //lottorow = "Correct Row!: " + String.Join(",", lottolist) + "\n";
+                    usernamerow = "\n" + username + ", ";
+                    numlistrow = String.Join(",", numlist) + "\t";
+                    lottomatchrow = Convert.ToString(lottomatch.Count() + " Right");
+                    Result = $" {usernamerow} {numlistrow} {lottomatchrow}";
+
+                    
+                    using (StreamWriter addTofile = new StreamWriter(path,true))
+                    {
+                        addTofile.WriteLine(Result + "\n==================");
+                    }
+
+                    
+                    
+
+                }
+                
+
+
+                using (StreamReader ReadFile = new StreamReader(path))
+                {
+                    Console.WriteLine(ReadFile.ReadToEnd());
+                }
+
+               
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine("Please Enter Number (1,2..) Format!");
+                return;
+            }
+            
+===============================================================================================================
+The Final Code:
+
+ public static void Lotto3()
+        {
+            bool loop = true;
+            try
+            {
+                string username;
+                List<int> numlistinput = new List<int>();
+                List<int> numlist = new List<int>();
+                Random lotto = new Random();
+                var lottolist = new List<int>();
+                List<int> lottomatch = new List<int>();
+                const string v = "";
+                string usernamerow;
+                string lottorow;
+                string numlistrow;
+                string lottomatchrow;
+                string Result;
+                string path = @"C:\lotto\LottoResult.txt";
+
+                while (loop)
+                {
+                    numlist.Clear();
+                    lottolist.Clear();
+                    Console.WriteLine("==================== WELCOME TO LOTTRY ====================\n" +
+                        "Please first enter the username then the numbers of each user.\n" +
+                        "Once you finish from entering the usernames and numbers\n" +
+                        "In name entry please hit <Enter> twice! to get the rsults!\n" +
+                        "Let's Go! GoodLuck!\n");
+                    Console.Write("Please Enter The Name: ");
+                    username = Console.ReadLine();
+                    if (username == v)
+                    {
+                        
+                        break;
+                    }
+
+                    Console.Write("Chose 7 numbers Ex. 1,22,65,4 etc..: ");
+                    numlistinput = Console.ReadLine().Split(',').Select(int.Parse).ToList();
+
+                    foreach(var item in numlistinput)
+                    {
+
+                        numlist.Add(item);
+
+                    }
+                    numlist.Sort();
+
+
+                    for (int i = 1; i <= 11; i++)
+                    {
+                        int lottonums = lotto.Next(1, 100);
+
+                        lottolist.Add(lottonums);
+                    }
+                    lottolist.Sort();
+
+                    foreach (int x in numlist)
+                        foreach (int z in lottolist)
+                            if (x == z)
+                            {
+                                lottomatch.Add(x);
+                            }
+
+
+
+                    lottorow = "\nCorrect Row!: " + String.Join(",", lottolist) + "\n";
+                    usernamerow = "\n" + username + ", ";
+                    numlistrow = String.Join(",", numlist) + "\t";
+                    lottomatchrow = Convert.ToString(lottomatch.Count() + " Right");
+                    Result = $"{lottorow} {usernamerow} {numlistrow} {lottomatchrow}";
+
+                    
+                    using (StreamWriter addTofile = new StreamWriter(path,true))
+                    {
+                        addTofile.WriteLine(Result + "\n==================");
+                    }
+
+                    
+                    
+
+                }
+                
+
+
+                using (StreamReader ReadFile = new StreamReader(path))
+                {
+                    Console.WriteLine(ReadFile.ReadToEnd());
+                    ReadFile.Close();
+                }
+
+               
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine("Please Enter Number (1,2..) Format!");
+                return;
+            }
+            
+
+ =========================================================
+ Final in Main Method :
+
+ namespace ConsoleApp1
+{
+    class Program
+    {
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("==================== WELCOME TO LOTTRY ====================\n" +
+                       "Please first enter the username then the numbers of each user.\n" +
+                       "Once you finish from entering the usernames and numbers\n" +
+                       "In name entry please hit <Enter> twice! to get the rsults!\n" +
+                       "Let's Go! GoodLuck!\n");
+
+            Lotto();
+
+
+
+            //Console.ReadLine();
+
+        }
+
+
+        public static void Lotto()
+        {
+            bool loop = true;
+            try
+            {
+                string username;
+                List<int> numlistinput = new List<int>();
+                List<int> numlist = new List<int>();
+                Random lotto = new Random();
+                var lottolist = new List<int>();
+                List<int> lottomatch = new List<int>();
+                const string v = "";
+                string usernamerow;
+                string lottorow;
+                string numlistrow;
+                string lottomatchrow;
+                string Result;
+                string path = @"C:\lotto\LottoResult.txt";
+
+                while (loop)
+                {
+                    numlist.Clear();
+                    lottolist.Clear();
+                   
+                    Console.Write("Please Enter The Name: ");
+                    username = Console.ReadLine();
+                    if (username == v)
+                    {
+                        
+                        break;
+                    }
+
+                    Console.Write("Chose 7 numbers Ex. 1,22,65,4 etc..: ");
+                    numlistinput = Console.ReadLine().Split(',').Select(int.Parse).ToList();
+
+                    foreach(var item in numlistinput)
+                    {
+
+                        numlist.Add(item);
+
+                    }
+                    numlist.Sort();
+
+
+                    for (int i = 1; i <= 11; i++)
+                    {
+                        int lottonums = lotto.Next(1, 100);
+
+                        lottolist.Add(lottonums);
+                    }
+                    lottolist.Sort();
+
+                    foreach (int x in numlist)
+                        foreach (int z in lottolist)
+                            if (x == z)
+                            {
+                                lottomatch.Add(x);
+                            }
+
+
+
+                    lottorow = "\nCorrect Row!: " + String.Join(",", lottolist) + "\n";
+                    usernamerow = "\n" + username + ", ";
+                    numlistrow = String.Join(",", numlist) + "\t";
+                    lottomatchrow = Convert.ToString(lottomatch.Count() + " Right");
+                    Result = $"{lottorow} {usernamerow} {numlistrow} {lottomatchrow}";
+
+                    
+                    using (StreamWriter addTofile = new StreamWriter(path,true))
+                    {
+                        addTofile.WriteLine(Result + "\n==================");
+                    }
+
+                    
+                    
+
+                }
+                
+
+
+                using (StreamReader ReadFile = new StreamReader(path))
+                {
+                    Console.WriteLine(ReadFile.ReadToEnd());
+                    ReadFile.Close();
+                }
+
+               
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine("Please Enter Number (1,2..) Format!");
+                return;
+            }
+            
+
+            
+
+
+
+
+        }
+
+        
+
+
+
+
+    }
+
+
+
+
+}
+
+
+
+
+
